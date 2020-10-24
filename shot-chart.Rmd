@@ -1,4 +1,12 @@
 ---
+editor_options: 
+  chunk_output_type: console
+output: 
+  word_document: 
+    toc: yes
+  pdf_document: 
+    toc: yes
+    number_sections: yes
 ---
 title: "R Notebook for NBA Shot Chart"
 ---
@@ -273,10 +281,17 @@ plot_court = function(court_theme = court_themes$light, use_short_three = FALSE)
 }
 ```
 
-The court plotting function is finished, let's see what it looks like.
+The court plotting function is finished, let's see what it looks like with the light theme.
 ```{r}
 plot_court(court_themes$light)
 ```
+
+What about dark?
+```{r}
+plot_court(court_themes$dark)
+```
+
+Both plots are saved in the images subdirectory, under the names base-shot-chart-dark.png and base-shot-chart-light.png.
 ## Shot LOC Lookup Function
 
 We can draw the court and look up players, now we need to lookup shot locations for said players. The function below will do this.
@@ -596,3 +611,4 @@ p <- plot_court(court_themes$light) +
 ggdraw(p) + 
   theme(plot.background = element_rect(fill="floralwhite", color = NA))
 ```
+This chart is saved as finished-shot-chart.png in the images folder.
